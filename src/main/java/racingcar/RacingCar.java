@@ -12,7 +12,7 @@ public class RacingCar {
         if(name.length() > 5) throw new IllegalArgumentException("extra name length");
 
         this.name = name;
-        this.distance = 4;
+        this.distance = 0;
     }
 
     public String GetName(){
@@ -27,6 +27,7 @@ public class RacingCar {
     public boolean TryMove(){
         int num = Randoms.pickNumberInRange(0, 9);
         if(num >= 4){
+            this.distance++;
             return true;
         }
         return false;
