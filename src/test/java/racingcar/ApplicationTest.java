@@ -12,11 +12,20 @@ class ApplicationTest extends NsTest {
     private static final int STOP = 3;
 
     @Test
-    void Name_Test(){
-        RacingCar car = new RacingCar("ca");
-        String res = car.GetName();
-        assertThat(res).isEqualTo("ca");
+    void NameException_Test(){
+        String name = "abcdef";
+        assertThatThrownBy(() -> new RacingCar(name))
+                .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void Name_Test(){
+        String name = "abcdef";
+        RacingCar car = new RacingCar(name);
+        String res = car.GetName();
+        assertThat(res).isEqualTo(name);
+    }
+
 
     @Test
     void 기능_테스트() {

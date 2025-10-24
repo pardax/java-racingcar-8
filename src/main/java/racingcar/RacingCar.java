@@ -3,7 +3,6 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class RacingCar {
-
     private String name;
     private int distance;
     //private
@@ -19,9 +18,14 @@ public class RacingCar {
         return this.name;
     }
 
+    public int GetDistance(){
+        return this.distance;
+    }
+
+
     public void PrintDistance(){
         String progress = "-".repeat(distance);
-        System.out.printf("%s : %s\n", name, progress);
+        System.out.printf("%s : %s%n", name, progress);
     }
 
     public boolean TryMove(){
